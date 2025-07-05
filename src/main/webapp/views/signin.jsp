@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Destiny Developer - SignIn</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="icon" th:href="@{/images/DD logo.png}" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+		<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+			<!-- 
+      <div class="navbar-brand"> <img src="/DestinyDeveloper/Images/DD logo.png" alt="Destiny Developer Logo" class="logo"></div> -->
+
+			<div class="container-fluid">
+				<a class="navbar-brand" th:href="@{index}"> 
+				<img th:src="@{/images/DD logo.png}" alt="logo" class="logo"></a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+					aria-controls="navbarScroll" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarScroll">
+					<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+						style="--bs-scroll-height: 100px;">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#index">Home</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#About">About</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#listing">Listing</a></li>
+
+						<!-- <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul> -->
+						<!-- </li> -->
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#contact">Contact</a></li>
+					</ul>
+					<!--  <form class="d-flex" role="search" onsubmit="return searchFunction()">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+					<form class="icon" action="login" method="get">
+						<button type="submit">
+							<h2>
+								<i class="bi bi-person-circle"></i>
+							</h2>
+						</button>
+					</form>
+
+				</div>
+			</div>
+		</nav>
+
+
+	</header>
+
+
+<div class="formcontrol">	
+
+<form action="SignIn" class="signin" method="get">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email </label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email Address" name="mail" required>
+   
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" name="pass" required>
+  </div>
+  
+  <h5 th:text="${msg}"></h5>
+  
+  <p>Don't have any account? Please <a th:href="@{/signup}">Sign Up</a></p>
+  
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+
+  <div id="contact">
+  <footer>
+    <!-- contact us  -->
+
+    <div class="footer m-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Company</h3>
+            <ul class="footer-list">
+              <li><a href="index">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="Listing">Listing</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 ">
+            <h3>Contact Us</h3>
+            <form class="contact-form" action="form">
+             <input type="text" class="form-control" placeholder="Your Name" name="name" required> <input
+                type="email" class="form-control" placeholder="Your Email" name="mail" required> <textarea class="form-control"
+                rows="3" placeholder="Your Message" name="msg" required></textarea> <button type="submit"
+                class="btn btn-success m-2">Send Message</button> </form>
+          </div>
+          <div class="col-md-4">
+            <h3>Follow Us</h3>
+            <div class="social-icons"> <a href="#" class="fab fa-facebook m-3"></a> <a href="#" class="fab fa-twitter m-3"></a>
+              <a href="#" class="fab fa-linkedin m-3"></a> <a href="#" class="fab fa-instagram m-3"></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+
+  <script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>
